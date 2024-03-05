@@ -1,0 +1,95 @@
+<header>
+  <a class="logo_wrapper" href="/">
+      <img class="logo" src="/res/images/logo.png" alt="">
+      <h1 class="title">TrackFlow</h1>
+  </a>
+</header>
+
+<div class="form-wrapper">
+
+
+  <form action="/create-issue/<%= id %>" method="post" class="form" id="create-issue-Form">
+    <div>
+      <h1>Create a new Issue</h1>
+    </div>
+  
+    <div>
+      <label for="name" class="form-label">Title: </label>
+      <input
+        type="text"
+        id="name"
+        required
+        name="title"
+        placeholder="Enter the title of your issue"
+        class="form-input"
+      />
+    </div>
+  
+    <div>
+      <label for="desc"class="form-label">Description: </label>
+      <textarea
+        type="text"
+        id="desc"
+        cols="3"
+        name="description"
+        placeholder="Add some description"
+        class="form-textarea"
+      ></textarea>
+    </div>
+  
+    <div>
+      <label for="labels" class="form-label">Label: </label>
+      <div class="added_labels form-input" id="added_labels-id">
+        <!-- <div class="label_item_added"><span>${}</span></div> -->
+        
+      </div>
+      <div>
+        <input type="text" id="label" placeholder="Search for labels" class="form-input" />
+        <div class="label_list_wrapper hide" id="label_list_wrapper-id">
+          <ul class="label_list">
+            <li id="add_label_id">
+              <div class="add_label" onclick="addInputLabel()">
+                <i class="fa-solid fa-plus"></i> Add&nbsp;<span
+                  id="label-text"
+                ></span>
+              </div>
+            </li>
+
+            <% labels.forEach(function (label) { %>
+              
+              <li class="label_list_item">
+                <i class="fa-solid fa-tag"></i><span class="label-name"><%= label %></span>
+              </li>
+          
+              <%});%>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+    <div>
+      <label for="author" class="form-label">Author Name: </label>
+      <input
+        type="text"
+        id="author"
+        name="author"
+        required
+        placeholder="Write the name of the author"
+        class="form-input"
+      />
+    </div>
+  
+    <div>
+      <input type="submit" value="Create Issue" id="submit-issue-id" class="form-input" />
+      <input type="button" onclick="resetForm()" value="Reset" id="reset-btn" class="form-input" />
+    </div>
+  </form>
+  
+</div>
+
+
+<% if(error) { %>
+  <p class="errmsg" style="color:red"><b><%= error %></b></p>
+<% } %>
+
+<script src="/js/create-issue-script.js"></script>

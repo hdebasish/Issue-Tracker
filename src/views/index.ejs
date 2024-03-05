@@ -1,0 +1,46 @@
+<header>
+  <a class="logo_wrapper" href="/">
+    <img class="logo" src="/res/images/logo.png" alt="" />
+    <h1 class="title">TrackFlow</h1>
+  </a>
+  <a class="create_new_project-btn" href="/create-project"
+    ><button class="create_new_project">
+      <i class="fa-solid fa-plus fa-2x"></i
+      ><span class="create_new_project_text">Create Project</span>
+    </button></a
+  >
+</header>
+
+<% if(projects.length >0 ) { %> <% projects.forEach(function (item) { %>
+<a class="project_folder_wrapper" href="/issue/<%= item._id %>">
+  <div class="project_folder">
+    <div class="project_wrapper">
+      <div class="project">
+        <div class="folder_tip"></div>
+        <div class="project_info_wrapper_wrapper">
+          <div class="project_info_wrapper">
+            <div class="project_info">
+              <h3><%= item.name %></h3>
+              <p>
+                <%= item.description %>
+              </p>
+            </div>
+          </div>
+          <div>
+            <div class="author">
+              <div class="created_by_text">Created by</div>
+              <div class="author_name"><%= item.author %></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</a>
+<% }); } else {%>
+
+<div class="empty_project">
+  <p>Create your first project</p>
+</div>
+
+<% } %>

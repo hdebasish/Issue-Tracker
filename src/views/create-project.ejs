@@ -1,0 +1,62 @@
+<header>
+  <a class="logo_wrapper" href="/" >
+      <img class="logo" src="/res/images/logo.png" alt="">
+      <h1 class="title">TrackFlow</h1>
+  </a>
+</header>
+
+<div class="form-wrapper">
+
+  <form action="/create-project" class="form" method="post">
+    <div>
+      <h1>Create a new project</h1>
+    </div>
+  
+    <div>
+      <label for="name" class="form-label">Project Name: </label>
+      <input
+        name="name"
+        type="text"
+        id="name"
+        required
+        placeholder="Enter your project name"
+        class="form-input"
+      />
+    </div>
+  
+    <div>
+      <label for="desc" class="form-label">Description: </label>
+      <textarea
+        name="description"
+        type="text"
+        id="desc"
+        cols="3"
+        placeholder="Add some description"
+        class="form-textarea"
+      ></textarea>
+    </div>
+  
+    <div>
+      <label for="author" class="form-label">Author Name: </label>
+      <input
+        name="author"
+        type="text"
+        id="author"
+        required
+        placeholder="Write the name of the author"
+        class="form-input"
+      />
+    </div>
+  
+    <div>
+      <input type="submit" value="Create Project" class="form-input" id="submit-project-id"/>
+      
+    </div>
+  </form>
+
+</div>
+
+<% if(error) { %>
+  <p class="errmsg" style="color:red"><b><%= error %></b></p>
+<% } %>
+

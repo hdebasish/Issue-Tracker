@@ -1,0 +1,605 @@
+/* CSS for index.ejs */
+/* ================================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+header{
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #C3423F;
+    box-shadow: 0px 2px 2px lightgrey;
+
+}
+
+
+.logo_wrapper{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    color: white;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.logo{
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+}
+
+.wrapper{
+
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    /* justify-content: space-between; */
+
+}
+
+.top-bar{
+  width:  100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.create_new_project-btn{
+
+  text-decoration: none;
+}
+
+.create_new_project{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #211A1E;
+    color: white;
+    margin: 10px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.create_new_project:hover{
+    background-color: white;
+    color: #211A1E;
+}
+
+.create_new_project:active{
+    background-color: lightgray;
+    color: #211A1E;;
+}
+
+.fa-plus{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.create_new_project_text{
+    font-weight: bold;
+    font-size: 24px;
+}
+
+
+.empty_project{
+    font-size: 36px;
+    height: 150px;
+    color: gray;
+    display: flex;
+    width: 100%;
+    margin: 17px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid gray;
+    border-style: dashed;
+    cursor: pointer;
+}
+
+.project_folder_wrapper{
+    text-decoration: none;
+    width: 230px;
+    margin: 17px;
+}
+
+.project_folder{
+
+    width: 100px;
+    height: 140px;
+    background-color: #ffa100;
+    border-radius: 20px;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column-reverse;
+
+}
+
+.project_wrapper{
+
+    width: 230px;
+    height: 130px;
+    background-color: #ffa100;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+
+.project{
+    width: 230px;
+    height: 130px;
+    background-color: #ffcb23;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+    
+    
+}
+
+.project:hover{
+    margin-top: 10px;
+    
+}
+
+.project h3{
+    color: #c3423f;
+    font-size: x-large;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.project p{
+    color: black;
+    display: -webkit-box; 
+    -webkit-box-orient: vertical; 
+    -webkit-line-clamp: 2; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+}
+
+.folder_tip{
+    background-color: #ffa100;
+    width: 98px;
+    height: 17px;
+    border-radius: 20px 0px 20px 0px;
+}
+
+.project_info_wrapper_wrapper{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+.project_info{
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.author{
+    display: flex;
+    justify-content: end;
+}
+
+.author_name{
+    width:  130px;
+    color: gray;
+    font-weight: bold;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.created_by_text{
+    width: 85px;
+    font-style: italic;
+    color: gray;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .wrapper{
+        justify-content: center;
+    }
+
+    .create_new_project_text{
+        font-size: small;
+    }
+
+    .title{
+        font-size: x-large;
+    }
+    
+  }
+
+
+
+/* CSS for create-issue.ejs */
+
+.form-wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+    margin: 17px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e4e3d3;
+    padding: 17px;
+    border-radius: 6px;
+  }
+  
+  .form > div {
+    padding: 6px;
+    margin: 6px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-input {
+    border: none;
+    outline: none;
+    color: black;
+    height: 30px;
+    width: 500px;
+    font-size: 20px;
+    border-radius: 7px;
+    padding: 8px;
+  }
+  
+  .form-textarea {
+    border: none;
+    outline: none;
+    color: black;
+    width: 500px;
+    font-size: 20px;
+    border-radius: 7px;
+    padding: 8px;
+  }
+  
+  .form-label {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  #submit-issue-id, #submit-project-id {
+    background-color: #ffa100; /* Green */
+    color: black;
+    height: 50px;
+    cursor: pointer;
+  }
+  
+  #reset-btn {
+    margin-top: 10px;
+    color: black;
+    height: 50px;
+    cursor: pointer;
+  }
+  
+  .check-label {
+    display: none;
+  }
+  
+  .label_list_wrapper {
+    position: relative;
+  }
+  
+  .label_list {
+    position: absolute;
+    list-style: none;
+    top: 0;
+    left: 1.5%;
+    max-height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  
+  .label_list li {
+    width: 500px;
+    height: 30px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    cursor: pointer;
+    background-color: white;
+  }
+  
+  .label_list li:hover {
+    background-color: lightgray;
+  }
+  
+  .fa-tag {
+    margin-right: 20px;
+    margin-left: 20px;
+    color: #c3423f;
+  }
+  
+  .fa-plus {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  
+  .add_label {
+    padding-left: 20px;
+    border: none;
+    outline: none;
+    width: 500px;
+    height: 30px;
+    background-color: #c3423f;
+    color: white;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 5px;
+  }
+  
+  #add_label_id {
+    display: none;
+  }
+  
+  .added_labels {
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    
+  }
+  
+  .label_item_added {
+    font-size: 14px;
+    padding: 7px;
+    border-radius: 17px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    background-color: #c3423f;
+    color: white;
+  }
+  
+  
+  /* CSS for create-project.ejs */
+  
+  
+  /* CSS for issue.ejs */
+
+  .project-info-header{
+    margin: 17px;
+  }
+
+  .create_new_project_text {
+    font-weight: bold;
+    font-size: 24px;
+  }
+  
+  .labels {
+    display: none;
+    width: 200px;
+    max-height: 200px;
+    background-color: #f2f2f2;
+    flex-direction: column;
+    justify-content: space-between;
+    border: #c3423f solid thin;
+  }
+  
+  .label-item-wrapper {
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  
+  .select-label {
+    position: relative;
+  }
+  
+  .select-label span {
+    font-size: large;
+  }
+  
+  
+  .menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 17px;
+  }
+  
+  .filter-button {
+    width: 200px;
+    height: 40px;
+    padding: 8px;
+    background-color: #c3423f;
+    border: none;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .filter-button:active {
+    background-color: #6d1b19;
+  }
+  
+  .label-item {
+    width: 100%;
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+  }
+
+  .labels-info, .authors-info{
+    width: 100%;
+  }
+  
+  .label-item:hover {
+    background-color: lightgray;
+  }
+  
+  .ok-btn {
+    border: none;
+    outline: none;
+    width: 80px;
+    height: 30px;
+    background-color: #c3423f;
+    color: white;
+    margin: 17px;
+    cursor: pointer;
+  }
+  
+  .filter-wrapper {
+    width: 450px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    z-index: 1;
+  }
+  
+  #searchInput {
+    width: 300px;
+    height: 30px;
+    background-color: #f2f2f2;
+    font-size: large;
+    outline: none;
+    border: none;
+    padding-left: 50px;
+    border: #c3423f solid thin;
+  }
+  
+  .search-box {
+    position: relative;
+    
+  }
+  
+  .fa-magnifying-glass {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: #c3423f;
+  }
+  
+  .table {
+    width: 100%;
+    position: absolute;
+    top: 250px;
+    left: 17px;
+  }
+  
+  #issues {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 97.5%;
+  }
+  
+  #issues td,
+  #issues th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #issues tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  #issues tr:hover {
+    background-color: #ddd;
+  }
+  
+  #issues th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #c3423f;
+    color: white;
+  }
+  
+  .label-item-capsule {
+    /* width:  10px; */
+    background-color: #ffcb23;
+    color: black;
+    padding: 7px;
+    border-radius: 50px;
+    text-align: center;
+    margin-left: 5px;
+  }
+  
+  .label-item-capsule-wrapper {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+  }
+
+  .errmsg{
+    margin: auto;
+    width: 50%;
+    text-align: center;
+  }
+
+  .errContainer{
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    margin-top: 10%;
+  }
+  
+  @media only screen and (max-width: 600px) {
+  
+    .title {
+      font-size: x-large;
+    }
+
+    .form {
+      width: 80%;
+    }
+
+    .form-input {
+      width: 300px;
+    }
+
+    .form-textarea{
+      width: 300px;
+    }
+
+    .filter-wrapper {
+      margin: 10px;
+    }
+
+    .table{
+      top: 300px;
+    }
+
+    .label_list li {
+      width: 300px;
+    }
+
+  }
+  
+
+  
+  .hide {
+    display: none;
+  }
+
+
+
+

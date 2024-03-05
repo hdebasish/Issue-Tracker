@@ -1,0 +1,125 @@
+<header>
+  <a class="logo_wrapper" href="/">
+    <img class="logo" src="/res/images/logo.png" alt="" />
+    <h1 class="title">TrackFlow</h1>
+  </a>
+  <a class="create_new_project-btn" href="/create-issue/<%= project._id %>"
+    ><button class="create_new_project">
+      <i class="fa-solid fa-plus fa-2x"></i
+      ><span class="create_new_project_text">Create Issue</span>
+    </button></a
+  >
+</header>
+
+<div class="project-info-header">
+  <h1><%= project.name %></h1>
+  <p><%= project.description %></p>
+</div>
+
+<% if(project.issues.length > 0) {%>
+
+<div class="menu">
+  <div class="search-box">
+    <i class="fa-solid fa-magnifying-glass"></i
+    ><input type="text" id="searchInput" placeholder="Search issues..." />
+  </div>
+
+  <div class="filter-wrapper">
+    
+
+    <div class="filter-box">
+      <div class="filter-label">
+        <div class="select-label">
+          <button class="filter-button" name="" id="" onclick="showAuthors()">
+            <i class="fa-solid fa-filter"></i
+            ><span>Filter by Author</span>&nbsp;<i
+              id="author-arrow"
+              class="fa-solid fa-caret-down"
+            ></i>
+          </button>
+        </div>
+      </div>
+      <div class="labels" id="authors-id">
+        <div class="label-item-wrapper">
+          <% authors.forEach((author) => { %>
+          <div class="label-item">
+            <input class="authors-info-check" type="checkbox" name="<%= author %>" id="<%= author %>-author-id" checked/>&nbsp;<label class="authors-info"
+              for="<%= author %>-author-id"
+              ><%= author %></label
+            ><br />
+          </div>
+          <% }); %>
+        </div>
+        <div>
+          <input class="ok-btn" type="button" value="Ok"  onclick="filterAuthors()" />
+        </div>
+      </div>
+    </div>
+
+
+    <div class="filter-box">
+      <div class="filter-label">
+        <div class="select-label">
+          <button class="filter-button" name="" id="" onclick="showLabels()">
+            <i class="fa-solid fa-filter"></i
+            ><span>Filter by Label</span>&nbsp;<i
+              id="label-arrow"
+              class="fa-solid fa-caret-down"
+            ></i>
+          </button>
+        </div>
+      </div>
+      <div class="labels" id="labels-id">
+        <div class="label-item-wrapper">
+          <% labels.forEach((label) => { %>
+          <div class="label-item">
+            <input type="checkbox" class="labels-info-check" name="<%= label %>" id="<%= label %>-label-id" checked/>&nbsp;<label class="labels-info" for="<%= label %>-label-id"
+              ><%= label %></label
+            >
+          </div>
+          <% }); %>
+        </div>
+        <div>
+          <input class="ok-btn" type="button" value="Ok" onclick="filterLabels()" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="table">
+  <table id="issues">
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Author</th>
+      <th>Labels</th>
+    </tr>
+
+    <% project.issues.forEach(function (issue) { %>
+
+    <tr>
+      <td class="title-col"><%= issue.title %></td>
+      <td class="desc-col"><%= issue.description %></td>
+      <td class="author-col"><%= issue.author %></td>
+      <td class="label-item-capsule-wrapper label-col">
+        <% if(issue.labels.length > 0) {%> <% issue.labels.forEach(function
+        (label) { %>
+        <div class="label-item-capsule"><%= label %></div>
+        <% }); %> <% } %>
+      </td>
+    </tr>
+
+    <% }); %>
+  </table>
+</div>
+
+<% } else { %>
+
+<div class="empty_project">
+  <p>No Issues Found</p>
+</div>
+
+<% } %>
+
+<script src="/js/issue-script.js"></script>
