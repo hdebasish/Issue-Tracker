@@ -6,7 +6,7 @@ An issue tracker, also known as a bug tracker or project management tool, is sof
 
 ## Demo
 
-[Issue Tracker](https://issue-tracker-nv69.onrender.com/)
+[Issue Tracker](issue-tracker-production.up.railway.app)
 
 ## Authors
 
